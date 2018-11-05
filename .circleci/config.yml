@@ -41,3 +41,7 @@ jobs:
       # See https://provartesting.com/help/devops/ant-task-parameters/
       # for more info on Provar ANT parameters 
       - run: ant -lib $PROVAR_HOME/ant -f CIProject/ANT/build.xml
+      
+      - store_test_results:
+        path: /home/circleci/project/CIProject/Results
+
