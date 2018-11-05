@@ -27,7 +27,7 @@ jobs:
       testproject.results: /home/circleci/project/CIProject/Results
     
     Steps:
-	# Retrieve the contents of the repo 
+      # Retrieve the contents of the repo 
       - checkout
 
       # Download and cache dependencies
