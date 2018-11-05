@@ -1,8 +1,9 @@
 <project default="runtests">
 	<property environment="env"/>
-	<property name="provar.home" value="/Applications/Provar.app/Contents/Eclipse/"/>
-	<property name="testproject.home" value=".."/>
-	<property name="testproject.results" value="../ANT/Results"/>
+	<property name="provar.home" value="${env.PROVAR_HOME}"/>
+	<property name="testproject.home" value="CIProject"/>
+	<property name="testproject.results" value="CIProject/Results"/>
+	<property name="license.path" value="${env.PROVAR_HOME}"/>	
 	
 	<taskdef name="Provar-Compile" classname="com.provar.testrunner.ant.CompileTask" classpath="${provar.home}/ant/ant-provar.jar"/>
 	<taskdef name="Run-Test-Case" classname="com.provar.testrunner.ant.RunnerTask" classpath="${provar.home}/ant/ant-provar.jar;${provar.home}/ant/ant-provar-bundled.jar;${provar.home}/ant/ant-provar-sf.jar"/>
@@ -20,7 +21,7 @@
 				webBrowser="Chrome" 
 				webBrowserConfiguration="Full Screen" 
 				excludeCallableTestCases="true" 
-				salesforceMetadataCache="Reuse" 
+				salesforceMetadataCache="Reload" 
 				projectCachePath="../../.provarCaches" 
 				testOutputlevel="WARNING" 
 				pluginOutputlevel="WARNING"
