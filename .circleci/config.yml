@@ -43,5 +43,5 @@ jobs:
       - run: ant -lib $PROVAR_HOME/ant -f CIProject/ANT/build.xml
       
       - store_test_results:
-        path: /home/circleci/project/CIProject/Results
+          path: /home/circleci/project/CIProject/Results
 
