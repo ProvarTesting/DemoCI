@@ -29,7 +29,14 @@
 				invokeTestRunMonitor="true"
 				>
 		
-			<fileset dir="../tests"><include name="Test Case 2 - Amazon.testcase"/></fileset><fileset dir="../tests"><include name="Test Case 1.testcase"/></fileset><fileset dir="../tests"><include name="Test Case 3 Salesforce Provar Demo Org.testcase"/></fileset>
+			<fileset dir="../tests">
+				<include name="Test Case 2 - Amazon.testcase"/>
+			</fileset>
+			<fileset dir="../tests">
+				<include name="Test Case 1.testcase"/></fileset>
+			<fileset dir="../tests">
+				<include name="Test Case 3 Salesforce Provar Demo Org.testcase"/>
+			</fileset>
 
 		</Run-Test-Case>
 
