@@ -7,8 +7,8 @@ jobs:
   build:
     docker:
       # Provar 1.8 and 1.9 run using Java 8, amend accordingly if 
-	# using a later version of Provar. The -browsers variant sets up 
-	# all prerequisites for Selenium testing, nice huh?
+      # using a later version of Provar. The -browsers variant sets up 
+      # all prerequisites for Selenium testing, nice huh?
       - image: circleci/openjdk:8-jdk-browsers
       
       # Specify service dependencies here if necessary
@@ -20,11 +20,11 @@ jobs:
 
     environment:
       # Customize the JVM maximum heap limit
-	# Set up environment variables here that don’t need to be secure
-	# We’ll add some additional variables in CircleCI itself for UN & PW
+      # Set up environment variables here that don’t need to be secure
+      # We’ll add some additional variables in CircleCI itself for UN & PW
       PROVAR_HOME: /home/circleci/project/ProvarHome
-      testproject.home: /home/circleci/project/DemoProject
-      testproject.results: /home/circleci/project/DemoProject/Results
+      testproject.home: /home/circleci/project/CIProject
+      testproject.results: /home/circleci/project/CIProject/Results
     
     Steps:
 	# Retrieve the contents of the repo 
@@ -33,11 +33,11 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "DemoProject/build.xml" }}
+          - v1-dependencies-{{ checksum "CIProject/ANT/build.xml" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
       # run: Provar Test Scripts under ANT
-# See https://provartesting.com/help/devops/ant-task-parameters/
-# for more info on Provar ANT parameters 
-      - run: ant -lib $PROVAR_HOME/ant -f DemoProject/build.xml
+      # See https://provartesting.com/help/devops/ant-task-parameters/
+      # for more info on Provar ANT parameters 
+      - run: ant -lib $PROVAR_HOME/ant -f CIProject/ANT/build.xml
